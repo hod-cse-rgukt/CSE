@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSE Department | RGUKT Basar</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+ <style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f4f7fb;
+  color: #333;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(135deg, #002b5c, #005bb5);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+header h2 {
+  margin: 5px 0 0;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  background: #003d80;
+  padding: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* HERO */
+.hero {
+  background: url('https://upload.wikimedia.org/wikipedia/commons/0/00/RGUKT_Basar_New_Logo.jpg') 
+              center/contain no-repeat;
+  height: 1550px;
+  margin: 20px auto;
+}
+
+/* SECTIONS */
+.container {
+  width: 90%;
+  margin: auto;
+  padding-bottom: 50px;
+}
+.section {
+  background: white;
+  padding: 30px;
+  margin: 20px 0;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.section h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+  color: #003d80;
+}
+
+/* LOGIN BOX */
+#login {
+  max-width: 420px;
+  margin: 40px auto;
+}
+#login1 {
+  max-width: 550px;
+  margin: 40px auto;
+}
+#login input {
+  width: 92%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+#login button {
+  width: 98%;
+  padding: 12px;
+  background: #005bb5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+#login button:hover {
+  background: #003d80;
+}
+#msg { 
+  color: red; 
+  text-align: center; 
+  margin-top: 10px;
+}
+
+footer {
+  background: #003366;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+/* ------- ROUND BUTTONS + MENU -------- */
+
+.round-buttons {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+  justify-content: center;
+}
+
+.round-buttons a,
+.main-btn {
+  width: 90px;
+  height: 90px;
+  background: #005bb5;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.round-buttons a:hover,
+.main-btn:hover {
+  background: #003d80;
+  transform: scale(1.1);
+}
+
+/* Menu row */
+.menu-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.menu-item {
+  position: relative;
+  text-align: center;
+  padding-bottom: 120px; /* hover area */
+}
+
+/* Submenu base */
+.submenu {
+  position: absolute;
+  top: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background: transparent;
+  z-index: 999;
+}
+
+.menu-item:hover .submenu,
+.menu-item:focus-within .submenu {
+  display: flex;
+}
+
+/* Sub-buttons */
+.sub-btn {
+  width: 140px;
+  padding: 10px;
+  background: white;
+  color: #003d80;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  transition: 0.3s;
+  text-align: center;
+}
+.sub-btn:hover {
+  background: #eef5ff;
+  transform: scale(1.05);
+}
+
+/* ------------- RESPONSIVE DESIGN ------------- */
+
+/* Tablet ≤ 992px */
+@media (max-width: 992px) {
+  .round-buttons a { width: 80px; height: 80px; }
+  .submenu { top: 90px; }
+  .sub-btn { width: 130px; font-size: 0.85rem; }
+}
+
+/* Mobile ≤ 768px */
+@media (max-width: 768px) {
+
+  .round-buttons {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .round-buttons a {
+    width: 70px;
+    height: 70px;
+    font-size: 0.85rem;
+  }
+
+  .menu-row {
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .menu-item {
+    flex: 1 1 45%;
+    padding-bottom: 80px;
+  }
+
+  .submenu {
+    position: static !important;
+    transform: none !important;
+    margin-top: 10px;
+    width: 100%;
+    display: none;
+    align-items: center;
+  }
+
+  .menu-item:hover .submenu,
+  .menu-item:focus-within .submenu {
+    display: flex;
+  }
+
+  .sub-btn {
+    width: 90%;
+    max-width: 250px;
+  }
+}
+
+/* Very small devices ≤ 480px */
+@media (max-width: 480px) {
+  .round-buttons a { width: 60px; height: 60px; font-size: 0.75rem; }
+  .menu-item { flex: 1 1 100%; padding-bottom: 60px; }
+  .sub-btn { width: 95%; }
+}
+	 /* Toggle-open submenu class */
+.submenu.show {
+  display: flex !important;
+}
+
+</style>
+
+</head>
+<body>
+
+<header>
+  <h1>Department of Computer Science & Engineering</h1>
+  <h2>Rajiv Gandhi University of Knowledge Technologies, Basar</h2>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#vision">Vision</a>
+  
+  <a href="#staff">Staff</a>
+  <a href="#contact">Contact Us</a>
+</nav>
+
+<div class="hero">
+
+<div class="section" id="login1">
+<h2>Student Resources</h2>
+
+<div class="menu-row">
+
+  <!-- Timetables Button -->
+  <div class="menu-item">
+    <a class="main-btn" href="#">E1</a>
+
+    <div class="submenu">
+      <a class="sub-btn" href="">Programming in C</a>
+    </div>
+  </div>
+  
+  <div class="menu-item">
+    <a class="main-btn" href="#">E2</a>
+
+    <div class="submenu">
+      <a class="sub-btn" href="DAA_Lecture_Plan.pdf">DAA</a>
+      <a class="sub-btn" href="WT_Lecture_Plan.pdf">WT</a>
+      <a class="sub-btn" href="OS_Lecture_Plan.pdf">OS</a>
+    </div>
+  </div>
+  
+  <div class="menu-item">
+    <a class="main-btn" href="#">E3</a>
+
+    <div class="submenu">
+      <a class="sub-btn" href="DevOps_Lecture_Plan.pdf">DevOps</a>
+      <a class="sub-btn" href="ML_Lecture_Plan.pdf">Machine Learning</a>
+      <a class="sub-btn" href="ACD_Lecture_Plan.pdf">Automata Theory and Compiler Design</a>
+      <a class="sub-btn" href="NC_Lecture_Plan">Natural Computing</a>
+      <a class="sub-btn" href="IR_Lecture_Plan.pdf">Information Retrieval</a>
+    </div>
+  </div>
+  
+  <div class="menu-item">
+    <a class="main-btn" href="#">E4</a>
+
+    <div class="submenu">
+      <a class="sub-btn" href="">Entrepreneurship and New Ventures</a>
+      <a class="sub-btn" href="">Sustainable Technologies</a>
+      <a class="sub-btn" href="">Biomedical Engineering</a>
+      </div>
+  </div>
+  
+  </div>
+<center><button class="big-btn" onClick="window.close()">Close</button>
+
+<style>
+.big-btn {
+  padding: 20px 40px;  /* top/bottom, left/right */
+  font-size: 18px;
+}
+</style>
+</body>
+</html>
